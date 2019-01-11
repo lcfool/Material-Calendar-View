@@ -82,6 +82,11 @@ public class DatePickerBuilder {
         return this;
     }
 
+    public DatePickerBuilder removeButtonColor(@ColorRes int color) {
+        mCalendarProperties.setRemoveButtonColor(color);
+        return this;
+    }
+
     public DatePickerBuilder minimumDate(Calendar calendar) {
         mCalendarProperties.setMinimumDate(calendar);
         return this;

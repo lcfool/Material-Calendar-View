@@ -35,7 +35,7 @@ public class CalendarProperties {
     public static final int FIRST_VISIBLE_PAGE = CALENDAR_SIZE / 2;
 
     private int mCalendarType, mHeaderColor, mHeaderLabelColor, mSelectionColor, mTodayLabelColor,
-            mDialogButtonsColor, mItemLayoutResource, mDisabledDaysLabelsColor, mPagesColor,
+            mDialogButtonsColor, mRemoveButtonColor, mItemLayoutResource, mDisabledDaysLabelsColor, mPagesColor,
             mAbbreviationsBarColor, mAbbreviationsLabelsColor, mDaysLabelsColor, mSelectionLabelColor,
             mAnotherMonthsDaysLabelsColor, mHeaderVisibility;
 
@@ -164,6 +164,14 @@ public class CalendarProperties {
 
     public void setDialogButtonsColor(int dialogButtonsColor) {
         mDialogButtonsColor = dialogButtonsColor;
+    }
+
+    public int getRemoveButtonColor() {
+        return mRemoveButtonColor;
+    }
+
+    public void setRemoveButtonColor(int removeButtonColor) {
+        mRemoveButtonColor = removeButtonColor;
     }
 
     public Calendar getMinimumDate() {

@@ -23,7 +23,7 @@ public class DatePicker {
     private final Context mContext;
     private CalendarProperties mCalendarProperties;
 
-    private AppCompatButton mCancelButton;
+    private AppCompatButton mRemoveButton;
     private AppCompatButton mOkButton;
     private AppCompatButton mTodayButton;
 
@@ -40,7 +40,7 @@ public class DatePicker {
             view.setBackgroundColor(mCalendarProperties.getPagesColor());
         }
 
-        mCancelButton = (AppCompatButton) view.findViewById(R.id.negative_button);
+        mRemoveButton = (AppCompatButton) view.findViewById(R.id.negative_button);
         mOkButton = (AppCompatButton) view.findViewById(R.id.positive_button);
         mTodayButton = (AppCompatButton) view.findViewById(R.id.today_button);
 
@@ -66,7 +66,10 @@ public class DatePicker {
         final AlertDialog alertdialog = alertBuilder.create();
         alertdialog.setView(view);
 
-        mCancelButton.setOnClickListener(v -> alertdialog.cancel());
+        mRemoveButton.setOnClickListener(v -> {
+            alertdialog.cancel();
+            mCalendarProperties.getOnSelectDateListener().onSelect(null);
+        });
 
         mOkButton.setOnClickListener(v -> {
             alertdialog.cancel();
@@ -82,7 +85,7 @@ public class DatePicker {
 
     private void setDialogButtonsColors() {
         if (mCalendarProperties.getDialogButtonsColor() != 0) {
-            mCancelButton.setTextColor(ContextCompat.getColor(mContext, mCalendarProperties.getDialogButtonsColor()));
+            mRemoveButton.setTextColor(ContextCompat.getColor(mContext, mCalendarProperties.getRemoveButtonColor()));
             mTodayButton.setTextColor(ContextCompat.getColor(mContext, mCalendarProperties.getDialogButtonsColor()));
         }
     }
