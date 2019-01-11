@@ -8,8 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import com.annimon.stream.Optional;
-import com.applandeo.materialcalendarview.exceptions.OutOfDateRangeException;
 import com.applandeo.materialcalendarview.utils.CalendarProperties;
 import com.applandeo.materialcalendarview.utils.DateUtils;
 
@@ -54,13 +52,13 @@ public class DatePicker {
         FrameLayout calendarContainer = (FrameLayout) view.findViewById(R.id.calendarContainer);
         calendarContainer.addView(calendarView);
 
-        Optional.ofNullable(mCalendarProperties.getCalendar()).ifPresent(calendar -> {
-            try {
-                calendarView.setDate(calendar);
-            } catch (OutOfDateRangeException exception) {
-                exception.printStackTrace();
-            }
-        });
+//        Optional.ofNullable(mCalendarProperties.getCalendar()).ifPresent(calendar -> {
+//            try {
+//                calendarView.setDate(calendar);
+//            } catch (OutOfDateRangeException exception) {
+//                exception.printStackTrace();
+//            }
+//        });
 
         AlertDialog.Builder alertBuilder = new AlertDialog.Builder(mContext);
         final AlertDialog alertdialog = alertBuilder.create();
