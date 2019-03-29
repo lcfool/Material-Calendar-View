@@ -13,6 +13,8 @@ import com.applandeo.materialcalendarview.exceptions.OutOfDateRangeException;
 import com.applandeo.materialcalendarview.utils.CalendarProperties;
 import com.applandeo.materialcalendarview.utils.DateUtils;
 
+import java.util.Calendar;
+
 /**
  * This class is responsible for creating DatePicker dialog.
  * <p>
@@ -76,7 +78,14 @@ public class DatePicker {
             mCalendarProperties.getOnSelectDateListener().onSelect(calendarView.getSelectedDates());
         });
 
-        mTodayButton.setOnClickListener(v -> calendarView.showCurrentMonthPage());
+        mTodayButton.setOnClickListener(v -> {
+            calendarView.showCurrentMonthPage();
+            try {
+                calendarView.setDate(Calendar.getInstance());
+            } catch (OutOfDateRangeException exception) {
+                exception.printStackTrace();
+            }
+        });
 
         alertdialog.show();
 
