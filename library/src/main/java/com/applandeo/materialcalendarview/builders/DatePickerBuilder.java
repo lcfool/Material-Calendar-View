@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.annotation.ColorRes;
 import android.support.annotation.DrawableRes;
 import android.support.v4.content.ContextCompat;
+import android.view.View;
 
 import com.applandeo.materialcalendarview.CalendarView;
 import com.applandeo.materialcalendarview.DatePicker;
@@ -52,7 +53,8 @@ public class DatePickerBuilder {
         return this;
     }
 
-    public DatePickerBuilder removeButtonVisibility(int visibility) {
+    public DatePickerBuilder setRemoveButtonVisibile(boolean isVisible) {
+        int visibility = isVisible ? View.VISIBLE : View.GONE;
         mCalendarProperties.setRemoveButtonVisibility(visibility);
         return this;
     }
