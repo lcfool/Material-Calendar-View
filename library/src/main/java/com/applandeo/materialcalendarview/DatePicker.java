@@ -73,6 +73,8 @@ public class DatePicker {
             mCalendarProperties.getOnSelectDateListener().onSelect(null);
         });
 
+        mRemoveButton.setVisibility(mCalendarProperties.getRemoveButtonVisibility());
+
         mOkButton.setOnClickListener(v -> {
             alertdialog.cancel();
             mCalendarProperties.getOnSelectDateListener().onSelect(calendarView.getSelectedDates());

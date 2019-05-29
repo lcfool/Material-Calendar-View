@@ -37,7 +37,7 @@ public class CalendarProperties {
     private int mCalendarType, mHeaderColor, mHeaderLabelColor, mSelectionColor, mTodayLabelColor,
             mDialogButtonsColor, mRemoveButtonColor, mItemLayoutResource, mDisabledDaysLabelsColor, mPagesColor,
             mAbbreviationsBarColor, mAbbreviationsLabelsColor, mDaysLabelsColor, mSelectionLabelColor,
-            mAnotherMonthsDaysLabelsColor, mHeaderVisibility;
+            mAnotherMonthsDaysLabelsColor, mHeaderVisibility, mRemoveButtonVisibility;
 
     private boolean mEventsEnabled;
 
@@ -364,5 +364,13 @@ public class CalendarProperties {
 
     public void setHeaderVisibility(int headerVisibility) {
         mHeaderVisibility = headerVisibility;
+    }
+
+    public int getRemoveButtonVisibility() {
+        return mRemoveButtonVisibility;
+    }
+
+    public void setRemoveButtonVisibility(int mRemoveButtonVisibility) {
+        this.mRemoveButtonVisibility = mRemoveButtonVisibility;
     }
 }
